@@ -17,5 +17,7 @@ docker-push: docker-build
 	docker push $(DOCKER_TAG)
 clean:
 	rm -rf $(OUT)
+test: docker-build
+	./test.sh
 
 .PHONY: build docker-build docker-push clean
